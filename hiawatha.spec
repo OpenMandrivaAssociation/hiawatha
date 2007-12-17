@@ -11,7 +11,6 @@ Source1: %{name}-sysvscript.bz2
 License: GPL
 Group: Networking/WWW
 Url: http://projects.leisink.org/index.php?page=hiawatha
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires: openssl-devel
 Requires(pre): rpm-helper
 Requires(post): rpm-helper
