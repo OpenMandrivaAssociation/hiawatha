@@ -63,6 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_sbindir}/%{name}
 %{_mandir}/*/*.*
 %config(noreplace) %{_sysconfdir}/logrotate.d/%name
-%{_localstatedir}/www/%name.html
+%{_localstatedir}/lib/www/%name.html
 %attr(0755,root,root) %{_initrddir}/%name
 
