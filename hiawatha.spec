@@ -1,6 +1,6 @@
 %define name hiawatha
 %define version 4.3.2
-%define release %mkrel 3
+%define release %mkrel 4
 
 Summary: Hiawatha, an advanced and secure webserver for Unix
 Name: %{name}
