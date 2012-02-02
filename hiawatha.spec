@@ -18,6 +18,7 @@ Group:		System/Servers
 Url:		http://www.hiawatha-webserver.org/
 BuildRequires:	libxslt-devel
 BuildRequires:	pkcs11-helper-devel
+BuildRequires:	cmake
 Requires(pre):	rpm-helper
 Requires(post):	rpm-helper
 Provides:	webserver
