@@ -1,11 +1,7 @@
 %define name	hiawatha
-%define version	8.0
+%define version	8.1
 %define rel	1
-%if %{mdvver} >=201100
-%define release	%rel
-%else
 %define release	%mkrel %rel
-%endif
 
 Summary:	An advanced and secure webserver for Unix
 Name:		%{name}
@@ -19,7 +15,7 @@ Url:		http://www.hiawatha-webserver.org/
 BuildRequires:	libxslt-devel
 BuildRequires:	pkcs11-helper-devel
 BuildRequires:	cmake >= 2.8.4
-Requires(pre):	rpm-helper
+Requires(preun):	rpm-helper
 Requires(post):	rpm-helper
 Provides:	webserver
 
