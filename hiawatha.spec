@@ -1,12 +1,11 @@
 %define name	hiawatha
-%define version	8.1
+%define version	8.2
 %define rel	1
-%define release	%mkrel %rel
 
 Summary:	An advanced and secure webserver for Unix
 Name:		%{name}
 Version:	%{version}
-Release:	%{release}
+Release:	%{rel}
 Source0:	http://www.hiawatha-webserver.org/files/%{name}-%{version}.tar.gz
 Source1:	%{name}-sysvscript
 License:	GPLv2
