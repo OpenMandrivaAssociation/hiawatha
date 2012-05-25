@@ -1,5 +1,5 @@
 %define name	hiawatha
-%define version	8.2
+%define version	8.3
 %define rel	1
 
 Summary:	An advanced and secure webserver for Unix
@@ -70,4 +70,5 @@ popd
 %{_sbindir}/cgi-wrapper
 %{_sbindir}/php-fcgi
 %{_sbindir}/wigwam
+%{_sbindir}/newroot
 %{_libdir}/%{name}
