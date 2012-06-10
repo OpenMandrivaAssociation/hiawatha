@@ -1,5 +1,5 @@
 %define name	hiawatha
-%define version	8.3
+%define version	8.4
 %define rel	1
 
 Summary:	An advanced and secure webserver for Unix
