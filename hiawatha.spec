@@ -1,5 +1,5 @@
 %define name	hiawatha
-%define version	8.4
+%define version	8.5
 %define rel	1
 
 Summary:	An advanced and secure webserver for Unix
@@ -8,6 +8,7 @@ Version:	%{version}
 Release:	%{rel}
 Source0:	http://www.hiawatha-webserver.org/files/%{name}-%{version}.tar.gz
 Source1:	%{name}-sysvscript
+Patch0:		hiawatha-8.5-mdv-use_system_polarssl.patch
 License:	GPLv2
 Group:		System/Servers
 Url:		http://www.hiawatha-webserver.org/
@@ -27,6 +28,8 @@ It has of course also thoroughly been checked and tested for buffer overflows
 
 %prep
 %setup -q
+%patch0 -p1
+rm -rf polarssl
 
 %build
 %cmake	-DENABLE_CHROOT:BOOL=ON \
@@ -71,4 +74,4 @@ popd
 %{_sbindir}/php-fcgi
 %{_sbindir}/wigwam
 %{_sbindir}/newroot
-%{_libdir}/%{name}
+#%{_libdir}/%{name}
