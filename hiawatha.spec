@@ -1,14 +1,11 @@
-%define name	hiawatha
-%define version	8.5
-%define rel	1
-
 Summary:	An advanced and secure webserver for Unix
-Name:		%{name}
-Version:	%{version}
-Release:	%{rel}
+Name:		hiawatha
+Version:	8.6
+Release:	1
 Source0:	http://www.hiawatha-webserver.org/files/%{name}-%{version}.tar.gz
 Source1:	%{name}-sysvscript
-Patch0:		hiawatha-8.5-mdv-use_system_polarssl.patch
+Patch0:		hiawatha-8.6-rosa-use_system_polarssl.patch
+Patch1:		hiawatha-8.6-libxml29.patch
 License:	GPLv2
 Group:		System/Servers
 Url:		http://www.hiawatha-webserver.org/
@@ -30,6 +27,7 @@ It has of course also thoroughly been checked and tested for buffer overflows
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 rm -rf polarssl
 
 %build
@@ -62,7 +60,6 @@ popd
 %_preun_service %{name}
 
 %files
-%defattr(-,root,root)
 %dir /var/log/%{name}
 %config(noreplace) %{_sysconfdir}/%{name}/*
 %{_sbindir}/%{name}
@@ -74,5 +71,74 @@ popd
 %{_sbindir}/cgi-wrapper
 %{_sbindir}/php-fcgi
 %{_sbindir}/wigwam
-%{_sbindir}/newroot
+#%{_sbindir}/newroot
 #%{_libdir}/%{name}
+
+
+%changelog
+* Tue Sep 18 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 8.5-1
++ Revision: 817067
+- update to 8.5
+- use system polarssl library
+
+* Sun Jun 10 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 8.4-1
++ Revision: 804330
+- update to 8.4
+
+* Fri May 25 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 8.3-1
++ Revision: 800733
+- update to 8.3
+
+* Fri May 04 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 8.2-1
++ Revision: 796129
+- update to 8.2
+
+* Sun Feb 26 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 8.1-1
++ Revision: 780912
+- update to 8.1
+
+* Thu Feb 02 2012 Dmitry Mikhirev <dmikhirev@mandriva.org> 8.0-1
++ Revision: 770756
+- update to 8.0
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - rebuild
+    - rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - adapt to %%_localstatedir now being /var instead of /var/lib (#22312)
+
+* Wed Jan 02 2008 Olivier Blin <blino@mandriva.org> 4.3.2-1mdv2008.1
++ Revision: 140747
+- restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+    - import hiawatha
+
+
+* Thu Aug 31 2006 Couriousous <couriousous@mandriva.org> 4.3.2-1mdv2007.0
+- 4.3.2
+
+* Sat Apr 15 2006 Couriousous <couriousous@mandriva.org> 4.2-1mdk
+- 4.2
+- LSB startup script
+
+* Fri Mar 17 2006 Couriousous <couriousous@mandriva.org> 3.6.1-2mdk
+- Rebuild
+
+* Sat Oct  1 2005 Couriousous <couriousous@mandriva.org> 3.6.1-1mdk
+- 3.6.1
+- Some spec fix
+
+* Sun Apr 24 2005 Couriousous <couriousous@mandriva.org> 3.5-1mdk
+- 3.5
+
+* Sat Apr 2 2005 Couriousous <couriousous@mandrake.org> 3.4-1mdk
+- 3.4
+
+* Wed Dec 1 2004 Couriousous <couriousous@zarb.org> 3.3-1mdk
+- 3.3
+
+* Mon Oct 11 2004 Couriousous <couriousous@zarb.org> 3.1-1mdk
+- First Mandrakelinux release

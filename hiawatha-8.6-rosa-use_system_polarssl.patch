@@ -26,15 +26,15 @@ Index: hiawatha-8.5/CMakeLists.txt
  target_link_libraries(hiawatha ${CRYPT_LIBRARY} pthread ${Z_LIBRARY})
  if(ENABLE_SSL)
  	target_link_libraries(hiawatha ${POLARSSL_LIBRARY})
-Index: hiawatha-8.5/CMakeFiles.txt
+Index: hiawatha-8.6/CMakeFiles.txt
 ===================================================================
---- hiawatha-8.5.orig/CMakeFiles.txt
-+++ hiawatha-8.5/CMakeFiles.txt
+--- hiawatha-8.6.orig/CMakeFiles.txt
++++ hiawatha-8.6/CMakeFiles.txt
 @@ -68,7 +68,6 @@ set(wigwam_src
- 	src/liblist.c 
- 	src/toolkit.c 
+ 	src/liblist.c
+ 	src/toolkit.c
  	src/wigwam.c
--	polarssl/library/md5.c 
+-	polarssl/library/md5.c
  )
  
  # configuration files
