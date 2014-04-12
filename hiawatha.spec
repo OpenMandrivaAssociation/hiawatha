@@ -1,7 +1,7 @@
 Summary:	An advanced and secure webserver for Unix
 Name:		hiawatha
 Version:	8.6
-Release:	1
+Release:	2
 Source0:	http://www.hiawatha-webserver.org/files/%{name}-%{version}.tar.gz
 Source1:	%{name}-sysvscript
 Patch0:		hiawatha-8.6-rosa-use_system_polarssl.patch
