@@ -1,11 +1,9 @@
 Summary:	An advanced and secure webserver for Unix
 Name:		hiawatha
-Version:	8.6
-Release:	2
+Version:	9.4
+Release:	1
 Source0:	http://www.hiawatha-webserver.org/files/%{name}-%{version}.tar.gz
 Source1:	%{name}-sysvscript
-Patch0:		hiawatha-8.6-rosa-use_system_polarssl.patch
-Patch1:		hiawatha-8.6-libxml29.patch
 License:	GPLv2
 Group:		System/Servers
 Url:		http://www.hiawatha-webserver.org/
@@ -26,9 +24,6 @@ It has of course also thoroughly been checked and tested for buffer overflows
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
-rm -rf polarssl
 
 %build
 %cmake	-DENABLE_CHROOT:BOOL=ON \
@@ -40,7 +35,8 @@ rm -rf polarssl
 	-DCMAKE_INSTALL_BINDIR:PATH=%{_bindir} \
 	-DCMAKE_INSTALL_SBINDIR:PATH=%{_sbindir} \
 	-DCMAKE_INSTALL_SYSCONFDIR:PATH=%{_sysconfdir} \
-	-DCMAKE_INSTALL_MANDIR:PATH=%{_mandir}
+	-DCMAKE_INSTALL_MANDIR:PATH=%{_mandir} \
+	-DUSE_SYSTEM_POLARSSL:BOOL=ON
 %make
 
 %install
@@ -69,7 +65,6 @@ popd
 %{_initrddir}/%name
 %{_bindir}/ssi-cgi
 %{_sbindir}/cgi-wrapper
-%{_sbindir}/php-fcgi
 %{_sbindir}/wigwam
 #%{_sbindir}/newroot
 #%{_libdir}/%{name}
