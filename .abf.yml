@@ -1,3 +1,4 @@
----
-sources:
+removed_sources:
   hiawatha-8.6.tar.gz: d4feb8800462669a454a120a9848e10959687b72
+sources:
+  hiawatha-9.4.tar.gz: 2e4b80627a904373c43ecafadcd73c62721ccaa9
