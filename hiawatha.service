@@ -1,0 +1,16 @@
+[Unit]
+Description=Hiawatha web server
+Requires=rpcbind.service
+After=syslog.target network.target rpcbind.service 
+
+[Service]
+Type=forking
+RemainAfterExit=yes
+EnvironmentFile=/etc/sysconfig/network
+EnvironmentFile=/etc/hiawatha/hiawatha.conf
+EnvironmentFile=/etc/init.d/functions
+EnvironmentFile=/etc/rc.d/init.d/functions
+ExecStart=/usr/sbin/hiawatha
+
+[Install]
+WantedBy=multi-user.target
