@@ -1,7 +1,7 @@
 Summary:	An advanced and secure webserver for Unix
 Name:		hiawatha
 Version:	9.4
-Release:	1
+Release:	3
 Source0:	http://www.hiawatha-webserver.org/files/%{name}-%{version}.tar.gz
 Source1:	hiawatha.service
 License:	GPLv2
@@ -51,10 +51,13 @@ install -D -m 755 %{SOURCE1} %{buildroot}%{_unitdir}/hiawatha.service
 popd
 
 %post
-%_post_service %{name}
+%systemd_post %{name}.service
 
 %preun
-%_preun_service %{name}
+%systemd_preun %{name}.service
+
+%postun
+%systemd_postun_with_restart %{name}.service
 
 %files
 %dir /var/log/%{name}
