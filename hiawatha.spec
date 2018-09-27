@@ -9,7 +9,7 @@ Group:		System/Servers
 Url:		http://www.hiawatha-webserver.org/
 BuildRequires:	libxslt-devel
 BuildRequires:	pkcs11-helper-devel
-BuildRequires:	polarssl-devel
+BuildRequires:	mbedtls-devel
 BuildRequires:	cmake >= 2.8.4
 Requires(preun):rpm-helper
 Requires(post):	rpm-helper
