@@ -7,8 +7,8 @@ Source1:	hiawatha.service
 License:	GPLv2
 Group:		System/Servers
 Url:		http://hiawatha.leisink.net/
-BuildRequires:	libxslt-devel
-BuildRequires:	pkcs11-helper-devel
+BuildRequires:	pkgconfig(libxslt)
+BuildRequires:	pkgconfig(libpkcs11-helper-1)
 BuildRequires:	mbedtls-devel
 BuildRequires:	cmake >= 2.8.4
 BuildRequires:	ninja
