@@ -6,7 +6,7 @@ Source0:	https://hiawatha.leisink.net/files/hiawatha-11.6.tar.gz
 Source1:	hiawatha.service
 License:	GPLv2
 Group:		System/Servers
-Url:		http://hiawatha.leisink.net/
+Url:		https://hiawatha.leisink.net/
 BuildRequires:	pkgconfig(libxslt)
 BuildRequires:	pkgconfig(libpkcs11-helper-1)
 BuildRequires:	mbedtls-devel
