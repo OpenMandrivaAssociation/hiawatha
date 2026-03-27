@@ -1,7 +1,7 @@
 Summary:	An advanced and secure webserver for Unix
 Name:		hiawatha
 Version:	11.7
-Release:	1
+Release:	2
 Source0:	https://hiawatha.leisink.net/files/hiawatha-%{version}.tar.gz
 Source1:	hiawatha.service
 License:	GPLv2
