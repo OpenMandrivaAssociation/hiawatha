@@ -60,7 +60,7 @@ rm -rf %{buildroot}%{_libdir}/hiawatha/libmbed*
 %{_mandir}/*/*.*
 %config(noreplace) %{_sysconfdir}/logrotate.d/%{name}
 %{_unitdir}/%{name}*
-%{_bindir}/ssi-cgi
+#{_bindir}/ssi-cgi
 %{_sbindir}/cgi-wrapper
 %{_sbindir}/wigwam
 %{_libdir}/hiawatha
