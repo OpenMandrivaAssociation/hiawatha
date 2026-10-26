@@ -24,6 +24,9 @@ It has of course also thoroughly been checked and tested for buffer overflows
 
 %prep
 %autosetup -p1
+# Bundled mbedtls turns every warning into an error. Clang rejects an
+# unterminated string initializer in the TLS 1.3 label macros.
+sed -i 's/set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Werror")/set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")/' mbedtls/CMakeLists.txt
 # FIXME use system mbedtls once hiawatha starts
 # supporting current versions
 %cmake \
